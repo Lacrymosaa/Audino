@@ -7,5 +7,5 @@ Audino é um programa feito em python usando a API "Spotipy" onde o usuário esc
 - Execute o audino.py e divirta-se!
 
 
-# Patches:
+# Updates:
 - 1.1 (16/04): Adicionado a opção de criar playlist com base nos 5 gêneros mais escutados pelo usuário. Basta colocar a duração e pressionar o Recomendados.

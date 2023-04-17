@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import filedialog
 import playlist_generator
+import recommendations
 
 class AudinoApp(tk.Frame):
     def __init__(self, master=None):
@@ -33,11 +34,20 @@ class AudinoApp(tk.Frame):
         self.quit_button = tk.Button(self, text="Sair", command=self.master.destroy)
         self.quit_button.grid(row=3, column=0)
 
+        self.recommendations_label = tk.Label(self, text="Coloque apenas a duração -->")
+        self.recommendations_label.grid(row=4, column=0)
+        self.recommendations_button = tk.Button(self, text="Recomendados", command=self.generate_with_recommendations)
+        self.recommendations_button.grid(row=4, column=1)
+
     def generate_playlist(self):
         genre = self.genre_entry.get()
         duration = int(self.duration_entry.get())
         popularity = int(self.popularity_entry.get())
         playlist_generator.generate_playlist(genre, duration, popularity)
+
+    def generate_with_recommendations(self):
+        duration = int(self.duration_entry.get())
+        recommendations.generate_with_recommendations(duration)
 
 root = tk.Tk()
 app = AudinoApp(master=root)
